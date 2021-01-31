@@ -38,11 +38,19 @@ int main() {
   int userIn;
   int totalM;
   double totalCm;
+  string userChoice;
+  
+  cout << "Type 'start' to begin conversion, and 'end' to quit." << endl;
+  cin >> userChoice;
 
-  getUserInput(userFt, userIn);
-  totalCm = ftAndInToCm(userFt, userIn);
-  totalM = cmToM(totalCm);
-  printConversion(totalM, totalCm - (totalM * 100));
+  while (userChoice != "end") {
+    getUserInput(userFt, userIn);
+    totalCm = ftAndInToCm(userFt, userIn);
+    totalM = cmToM(totalCm);
+    printConversion(totalM, totalCm - (totalM * 100));
+
+    cout << "Type 'start' to begin another conversion, and 'end' to quit." << endl;
+    cin >> userChoice;
 
 
   return 0;
